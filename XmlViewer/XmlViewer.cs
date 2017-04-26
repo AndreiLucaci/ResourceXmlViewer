@@ -56,9 +56,13 @@ namespace XmlViewerApp
 			Text = FileName;
 
 			var lbl = new ToolStripLabel("Search: ");
-			var tb = new ToolStripTextBox();
-			tb.RightToLeft = lbl.RightToLeft = RightToLeft.Yes;
-			tb.Width = 200;
+			var tb = new ToolStripTextBox()
+			{
+				//RightToLeft = lbl.RightToLeft = RightToLeft.Yes,
+				//Width = 5000,
+				Dock = DockStyle.Fill,
+				AutoSize = false
+			};
 			tb.KeyUp += (o, e) =>
 			{
 				if (e.KeyCode == Keys.Enter)
@@ -84,8 +88,8 @@ namespace XmlViewerApp
 					(Parent as MainWindow).OpenFile();
 				}
 			};
-			statusStrip1.Items.Add(tb);
 			statusStrip1.Items.Add(lbl);
+			statusStrip1.Items.Add(tb);
 
 			xmlViewerOptions1.RefreshFile += (e, o) =>
 			{
