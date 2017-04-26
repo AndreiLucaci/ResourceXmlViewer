@@ -33,12 +33,14 @@
 			this.searchBox = new System.Windows.Forms.TextBox();
 			this.richTextBox1 = new System.Windows.Forms.RichTextBox();
 			this.autocompleteListBox1 = new XmlViewerApp.AutocompleteListBox();
+			this.refreshFile_btn = new System.Windows.Forms.Button();
 			this.flowLayoutPanel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// flowLayoutPanel1
 			// 
 			this.flowLayoutPanel1.Controls.Add(this.button1);
+			this.flowLayoutPanel1.Controls.Add(this.refreshFile_btn);
 			this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -97,14 +99,24 @@
 			this.autocompleteListBox1.SearchKeySelected += new System.EventHandler<XmlViewerApp.AutoCompleteSearchKeyEventArgs>(this.autocompleteListBox1_SearchKeySelected);
 			this.autocompleteListBox1.Leave += new System.EventHandler(this.autocompleteListBox1_Leave);
 			// 
+			// refreshFile_btn
+			// 
+			this.refreshFile_btn.Location = new System.Drawing.Point(129, 3);
+			this.refreshFile_btn.Name = "refreshFile_btn";
+			this.refreshFile_btn.Size = new System.Drawing.Size(101, 35);
+			this.refreshFile_btn.TabIndex = 1;
+			this.refreshFile_btn.Text = "Refresh File";
+			this.refreshFile_btn.UseVisualStyleBackColor = true;
+			this.refreshFile_btn.Click += new System.EventHandler(this.refreshFile_btn_Click);
+			// 
 			// XmlViewerOptions
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.richTextBox1);
 			this.Controls.Add(this.autocompleteListBox1);
 			this.Controls.Add(this.searchBox);
 			this.Controls.Add(this.flowLayoutPanel1);
-			this.Controls.Add(this.richTextBox1);
 			this.Name = "XmlViewerOptions";
 			this.Size = new System.Drawing.Size(251, 347);
 			this.flowLayoutPanel1.ResumeLayout(false);
@@ -120,5 +132,6 @@
         private System.Windows.Forms.Button button1;
         private global::XmlViewerApp.AutocompleteListBox autocompleteListBox1;
         private System.Windows.Forms.RichTextBox richTextBox1;
-    }
+		private System.Windows.Forms.Button refreshFile_btn;
+	}
 }
